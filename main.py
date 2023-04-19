@@ -12,13 +12,13 @@ def main():
     if len(result) > 0:     # if found the country
         country = result[0]     
         labels, values = utils.get_population(country)
-        charts.generate_bar_chart(labels,values)     
+        charts.generate_bar_chart(country['Country/Territory'], labels,values)     
 
     # generate pie chart of some countries 
     column = 'World Population Percentage'  
     continent = 'South America'
     labels, values = utils.population_by_year(data, column, continent)
-    charts.generate_pie_chart(labels, values)
+    charts.generate_pie_chart(continent, labels, values)
 
 
 if __name__ == '__main__':
